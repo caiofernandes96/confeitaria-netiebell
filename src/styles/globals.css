@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-rose-pastel: 250 237 237;
+    --color-beige: 245 240 235;
+    --color-cream: 255 253 248;
+    --color-gold: 216 180 140;
+    --color-brown: 101 67 33;
+    --color-pink-soft: 255 218 224;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: rgb(51 51 51);
+    background-color: rgb(255 255 255);
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}

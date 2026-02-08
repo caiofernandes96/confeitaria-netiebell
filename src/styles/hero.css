@@ -1,0 +1,63 @@
+/* Hero section: container do banner */
+.hero {
+  position: relative;
+}
+
+/* Botões do hero: centralizados na parte inferior */
+.hero__actions {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* Botão Instagram: estilo glass para alto contraste e legibilidade */
+.hero__btn--instagram {
+  background-color: rgba(255, 255, 255, 0.88);
+  color: rgb(101, 67, 33);
+  border: 1px solid rgba(151, 117, 83, 0.4);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+  .hero__btn--instagram {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.hero__btn--instagram:hover {
+  background-color: rgba(255, 255, 255, 0.98);
+  border-color: rgba(101, 67, 33, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  color: rgb(80, 50, 20);
+}
+
+@media (max-width: 639px) {
+  .hero__actions {
+    flex-direction: column;
+    width: calc(100% - 32px);
+    max-width: 360px;
+  }
+
+  .hero__actions .hero__btn {
+    width: 100%;
+    max-width: 360px;
+    box-sizing: border-box;
+  }
+}
