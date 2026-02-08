@@ -74,7 +74,7 @@ export function Home({ onNavigate }: HomeProps) {
         <img
           src={heroImage}
           alt="Neti & Bell - Bolos decorados, doces e sobremesas feitas com amor"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="hero__img absolute inset-0 w-full h-full object-cover"
         />
         <div className="hero__actions">
           <a

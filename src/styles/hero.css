@@ -1,6 +1,15 @@
 /* Hero section: container do banner */
 .hero {
   position: relative;
+  background-color: #faf0eb;
+}
+
+/* No mobile: imagem inteira visível, sem cortar (object-contain) */
+@media (max-width: 639px) {
+  .hero__img {
+    object-fit: contain;
+    object-position: center center;
+  }
 }
 
 /* Botões do hero: centralizados na parte inferior */
