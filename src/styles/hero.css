@@ -1,31 +1,49 @@
 /* ============================================
    Hero section - banner responsivo
-   Desktop: cover (preenche, pode cortar)
-   Mobile: contain (imagem inteira) + altura flexível
+   <picture>: até 767px = banner-mobile, >= 768px = banner-desktop
+   Desktop: cover | Mobile: contain + altura flexível
    ============================================ */
 
 .hero {
   position: relative;
   overflow: hidden;
-  /* Desktop: altura fixa vem do Tailwind (h-[600px] md:h-[700px]) */
   background-color: #faf0eb;
 }
 
-/* Imagem: desktop = cover (preenche a área) */
-.hero__img {
-  object-fit: cover;
-  object-position: center center;
+/* <picture> preenche o hero */
+.hero__picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-/* ---- Mobile: imagem inteira + altura que se ajusta ---- */
-@media (max-width: 639px) {
+.hero__picture .hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* ---- Desktop (>= 768px): imagem horizontal, cover ---- */
+@media (min-width: 768px) {
+  .hero__picture .hero__img {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* ---- Mobile (até 767px): imagem vertical, contain, altura flexível ---- */
+@media (max-width: 767px) {
   .hero {
     height: auto;
     min-height: 65vh;
     max-height: 85vh;
   }
 
-  .hero__img {
+  .hero__picture .hero__img {
     object-fit: contain;
     object-position: center center;
   }

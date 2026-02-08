@@ -7,7 +7,8 @@ import image_5a74e50d4376c3f07f6ce5faf89251ac3ecfbc79 from 'figma:asset/5a74e50d
 import image_3118e070a569a59718d0447f2aeda09df3d55109 from 'figma:asset/3118e070a569a59718d0447f2aeda09df3d55109.png';
 import image_fa1d8a0102d9eb07992de109db9248eae1e04d7a from 'figma:asset/fa1d8a0102d9eb07992de109db9248eae1e04d7a.png';
 import image_2162c3a7c055ad1eb1bd65818a3092c6c82d1f1a from 'figma:asset/2162c3a7c055ad1eb1bd65818a3092c6c82d1f1a.png';
-import heroImage from '../assets/hero.png';
+import bannerDesktop from '../assets/hero.png';
+import bannerMobile from '../assets/banner-mobile.png';
 import docesGourmetImage from '../assets/doces-gourmet.jpg.jpg';
 import { getWhatsAppUrl } from '../config/whatsapp';
 import { INSTAGRAM_URL } from '../config/instagram';
@@ -71,11 +72,15 @@ export function Home({ onNavigate }: HomeProps) {
       {/* Hero Section */}
       <section className="hero relative h-[600px] md:h-[700px] overflow-hidden">
         <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden />
-        <img
-          src={heroImage}
-          alt="Neti & Bell - Bolos decorados, doces e sobremesas feitas com amor"
-          className="hero__img absolute inset-0 w-full h-full object-cover"
-        />
+        <picture className="hero__picture">
+          <source media="(max-width: 767px)" srcSet={bannerMobile} />
+          <source media="(min-width: 768px)" srcSet={bannerDesktop} />
+          <img
+            src={bannerDesktop}
+            alt="Neti & Bell - Bolos decorados, doces e sobremesas feitas com amor"
+            className="hero__img"
+          />
+        </picture>
         <div className="hero__actions">
           <a
             href={getWhatsAppUrl()}
